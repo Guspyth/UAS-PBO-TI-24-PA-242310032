@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Jan 18, 2026 at 09:37 AM
--- Server version: 8.4.3
--- PHP Version: 8.3.16
+-- Host: localhost
+-- Generation Time: Jan 24, 2026 at 10:14 PM
+-- Server version: 8.0.30
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -50,7 +50,14 @@ INSERT INTO `diagnosis` (`id`, `id_pasien`, `id_penyakit`) VALUES
 (10, 10, 10),
 (11, 11, 11),
 (12, 12, 12),
-(13, 13, 13);
+(13, 13, 13),
+(14, 14, 14),
+(15, 15, 15),
+(16, 16, 16),
+(17, 17, 17),
+(18, 18, 18),
+(19, 19, 19),
+(20, 20, 20);
 
 -- --------------------------------------------------------
 
@@ -69,19 +76,26 @@ CREATE TABLE `gejala` (
 --
 
 INSERT INTO `gejala` (`id`, `jenis_gejala`, `id_penyakit`) VALUES
-(1, 'Pilek ringan, bersin, hidung tersumbat', 1),
-(2, 'Pilek ringan, bersin, hidung tersumbat', 2),
-(3, 'Demam tinggi, bintik merah, sesak napas', 3),
-(4, 'Pilek ringan, bersin, hidung tersumbat', 4),
-(5, 'Pilek ringan, bersin, hidung tersumbat', 5),
-(6, 'Pilek ringan, bersin, hidung tersumbat', 6),
-(7, 'Pilek ringan, bersin, hidung tersumbat', 7),
-(8, 'Pilek ringan, bersin, hidung tersumbat', 8),
-(9, 'Pilek ringan, bersin, hidung tersumbat', 9),
-(10, 'Pilek ringan, bersin, hidung tersumbat', 10),
-(11, 'Pilek ringan, bersin, hidung tersumbat', 11),
-(12, 'Pilek ringan, bersin, hidung tersumbat', 12),
-(13, 'Pilek ringan, bersin, hidung tersumbat', 13);
+(1, 'Demam tinggi, bintik merah, sesak napas', 1),
+(2, 'Demam tinggi, bintik merah, sesak napas', 2),
+(3, 'Pilek ringan, bersin, hidung tersumbat', 3),
+(4, 'Nyeri menelan, tenggorokan sakit, sesak napas', 4),
+(5, 'Sesak napas, batuk, napas berbunyi', 5),
+(6, 'Demam tinggi, nyeri otot, bintik merah', 6),
+(7, 'Nyeri menelan, tenggorokan sakit', 7),
+(8, 'Demam tinggi, bintik merah, sesak napas', 8),
+(9, 'Demam tinggi, bintik merah, sesak napas', 9),
+(10, 'Demam tinggi, bintik merah, sesak napas', 10),
+(11, 'Demam tinggi, bintik merah, sesak napas', 11),
+(12, 'Demam tinggi, nyeri otot, bintik merah', 12),
+(13, 'Demam tinggi, nyeri otot, bintik merah', 13),
+(14, 'Demam tinggi, nyeri otot, bintik merah', 14),
+(15, 'Pilek ringan, bersin, hidung tersumbat', 15),
+(16, 'Demam tinggi, bintik merah, sesak napas', 16),
+(17, 'Demam tinggi, bintik merah, sesak napas', 17),
+(18, 'Demam tinggi, bintik merah, sesak napas', 18),
+(19, 'Demam tinggi, bintik merah, sesak napas', 19),
+(20, 'Demam tinggi, bintik merah, sesak napas', 20);
 
 -- --------------------------------------------------------
 
@@ -100,19 +114,26 @@ CREATE TABLE `obat` (
 --
 
 INSERT INTO `obat` (`id`, `jenis_obat`, `id_penyakit`) VALUES
-(1, 'Paracetamol: 500 mg – 1000 mg setiap 6 jam (Maksimal 4000 mg per hari).', 1),
-(2, 'Paracetamol: 500 mg – 1000 mg setiap 6 jam (Maksimal 4000 mg per hari).', 2),
-(3, 'Salbutamol (Inhaler): 100–200 mcg\nOralit: 200 ml\nParasetamol: 500 mg setiap 6 jam.', 3),
-(4, 'Paracetamol: 500 mg – 1000 mg setiap 6 jam (Maksimal 4000 mg per hari).', 4),
-(5, 'Paracetamol: 500 mg – 1000 mg setiap 6 jam (Maksimal 4000 mg per hari).', 5),
-(6, 'Paracetamol: 500 mg – 1000 mg setiap 6 jam (Maksimal 4000 mg per hari).', 6),
-(7, 'Paracetamol: 500 mg – 1000 mg setiap 6 jam (Maksimal 4000 mg per hari).', 7),
-(8, 'Paracetamol: 500 mg – 1000 mg setiap 6 jam (Maksimal 4000 mg per hari).', 8),
-(9, 'Paracetamol: 500 mg – 1000 mg setiap 6 jam (Maksimal 4000 mg per hari).', 9),
-(10, 'Paracetamol: 500 mg – 1000 mg setiap 6 jam (Maksimal 4000 mg per hari).', 10),
-(11, 'Paracetamol: 500 mg – 1000 mg setiap 6 jam (Maksimal 4000 mg per hari).', 11),
-(12, 'Paracetamol: 500 mg – 1000 mg setiap 6 jam (Maksimal 4000 mg per hari).', 12),
-(13, 'Paracetamol: 500 mg – 1000 mg setiap 6 jam (Maksimal 4000 mg per hari).', 13);
+(1, 'Salbutamol (Inhaler): 100–200 mcg\nOralit: 200 ml\\nParasetamol: 500 mg setiap 6 jam.', 1),
+(2, 'Salbutamol (Inhaler): 100–200 mcg\nOralit: 200 ml\nParasetamol: 500 mg setiap 6 jam.', 2),
+(3, 'Paracetamol: 500 mg – 1000 mg setiap 6 jam (Maksimal 4000 mg per hari).', 3),
+(4, 'Salbutamol (Inhaler): 100–200 mcg\nAmoxicillin: 500 mg setiap 8 jam (3x sehari)', 4),
+(5, 'Salbutamol (Inhaler): 100–200 mcg', 5),
+(6, 'Oralit: 200 ml\nParasetamol: 500 mg setiap 6 jam.', 6),
+(7, 'Amoxicillin: 500 mg setiap 8 jam (3x sehari)', 7),
+(8, 'Salbutamol (Inhaler): 100–200 mcg\nOralit: 200 ml\nParasetamol: 500 mg setiap 6 jam.', 8),
+(9, 'Salbutamol (Inhaler): 100–200 mcg\nOralit: 200 ml\nParasetamol: 500 mg setiap 6 jam.', 9),
+(10, 'Salbutamol (Inhaler): 100–200 mcg\nOralit: 200 ml\nParasetamol: 500 mg setiap 6 jam.', 10),
+(11, 'Salbutamol (Inhaler): 100–200 mcg\nOralit: 200 ml\nParasetamol: 500 mg setiap 6 jam.', 11),
+(12, 'Oralit: 200 ml\nParasetamol: 500 mg setiap 6 jam.', 12),
+(13, 'Oralit: 200 ml\nParasetamol: 500 mg setiap 6 jam.', 13),
+(14, 'Oralit: 200 ml\nParasetamol: 500 mg setiap 6 jam.', 14),
+(15, 'Paracetamol: 500 mg – 1000 mg setiap 6 jam (Maksimal 4000 mg per hari).', 15),
+(16, 'Salbutamol (Inhaler): 100–200 mcg\nOralit: 200 ml\nParasetamol: 500 mg setiap 6 jam.', 16),
+(17, 'Salbutamol (Inhaler): 100–200 mcg\nOralit: 200 ml\nParasetamol: 500 mg setiap 6 jam.', 17),
+(18, 'Salbutamol (Inhaler): 100–200 mcg\nOralit: 200 ml\nParasetamol: 500 mg setiap 6 jam.', 18),
+(19, 'Salbutamol (Inhaler): 100–200 mcg\nOralit: 200 ml\nParasetamol: 500 mg setiap 6 jam.', 19),
+(20, 'Salbutamol (Inhaler): 100–200 mcg\nOralit: 200 ml\nParasetamol: 500 mg setiap 6 jam.', 20);
 
 -- --------------------------------------------------------
 
@@ -130,19 +151,26 @@ CREATE TABLE `pasien` (
 --
 
 INSERT INTO `pasien` (`id`, `nama`) VALUES
-(1, '1'),
-(2, '1'),
-(3, 'anda'),
-(4, 'andi'),
-(5, 'andu'),
-(6, 'ando'),
-(7, 'ande'),
-(8, 'budi'),
-(9, 'budi'),
-(10, 'buda'),
-(11, 'buda'),
-(12, 'buda'),
-(13, 'buda');
+(1, 'aji'),
+(2, 'rini'),
+(3, 'rina'),
+(4, 'roni'),
+(5, 'nina'),
+(6, 'lukas'),
+(7, 'fika'),
+(8, 'danu'),
+(9, 'gilang'),
+(10, 'rani'),
+(11, 'dina'),
+(12, 'dina'),
+(13, 'dina'),
+(14, 'dina'),
+(15, 'dina'),
+(16, 'rina'),
+(17, 'apis'),
+(18, 'mina'),
+(19, 'mino'),
+(20, 'sofa');
 
 -- --------------------------------------------------------
 
@@ -160,19 +188,26 @@ CREATE TABLE `penyakit` (
 --
 
 INSERT INTO `penyakit` (`id`, `jenis_penyakit`) VALUES
-(1, 'Common Cold'),
-(2, 'Common Cold'),
-(3, 'Demam Berdarah + Asma Infeksi'),
-(4, 'Common Cold'),
-(5, 'Common Cold'),
-(6, 'Common Cold'),
-(7, 'Common Cold'),
-(8, 'Common Cold'),
-(9, 'Common Cold'),
-(10, 'Common Cold'),
-(11, 'Common Cold'),
-(12, 'Common Cold'),
-(13, 'Common Cold');
+(1, 'Demam Berdarah + Asma Infeksi'),
+(2, 'Demam Berdarah + Asma Infeksi'),
+(3, 'Common Cold'),
+(4, 'Faringitis + Asma Infeksi'),
+(5, 'Asma Infeksi'),
+(6, 'Demam Berdarah (DBD)'),
+(7, 'Faringitis'),
+(8, 'Demam Berdarah + Asma Infeksi'),
+(9, 'Demam Berdarah + Asma Infeksi'),
+(10, 'Demam Berdarah + Asma Infeksi'),
+(11, 'Demam Berdarah + Asma Infeksi'),
+(12, 'Demam Berdarah (DBD)'),
+(13, 'Demam Berdarah (DBD)'),
+(14, 'Demam Berdarah (DBD)'),
+(15, 'Common Cold'),
+(16, 'Demam Berdarah + Asma Infeksi'),
+(17, 'Demam Berdarah + Asma Infeksi'),
+(18, 'Demam Berdarah + Asma Infeksi'),
+(19, 'Demam Berdarah + Asma Infeksi'),
+(20, 'Demam Berdarah + Asma Infeksi');
 
 --
 -- Indexes for dumped tables
@@ -220,31 +255,31 @@ ALTER TABLE `penyakit`
 -- AUTO_INCREMENT for table `diagnosis`
 --
 ALTER TABLE `diagnosis`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `gejala`
 --
 ALTER TABLE `gejala`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `obat`
 --
 ALTER TABLE `obat`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `pasien`
 --
 ALTER TABLE `pasien`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `penyakit`
 --
 ALTER TABLE `penyakit`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Constraints for dumped tables
